@@ -8,11 +8,6 @@ if exists("g:loaded_rsi") || v:version < 700 || &cp
 endif
 let g:loaded_rsi = 1
 
-set ttimeout
-if &ttimeoutlen == -1
-  set ttimeoutlen=50
-endif
-
 inoremap        <C-A> <C-O>^
 inoremap   <C-X><C-A> <C-A>
 cnoremap        <C-A> <Home>
@@ -25,6 +20,8 @@ inoremap <expr> <C-D> col('.')>strlen(getline('.'))?"\<Lt>C-D>":"\<Lt>Del>"
 cnoremap <expr> <C-D> getcmdpos()>strlen(getcmdline())?"\<Lt>C-D>":"\<Lt>Del>"
 
 inoremap <C-E> <End>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
 
 inoremap <expr> <C-F> col('.')>strlen(getline('.'))?"\<Lt>C-F>":"\<Lt>Right>"
 cnoremap <expr> <C-F> getcmdpos()>strlen(getcmdline())?&cedit:"\<Lt>Right>"
